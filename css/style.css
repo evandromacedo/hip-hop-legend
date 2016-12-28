@@ -13,34 +13,22 @@
 /* Animations */
 @-webkit-keyframes rotating {
   from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 
 @keyframes rotating {
   from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -64,8 +52,8 @@ body, html {
 }
 
 a {
-  color: inherit; /* blue colors for links too */
-  text-decoration: inherit; /* no underline */
+  color: inherit;
+  text-decoration: inherit;
 }
 
 h1 {
@@ -79,9 +67,6 @@ h1 {
 
 .rotating {
   -webkit-animation: rotating 3s linear infinite;
-  -moz-animation: rotating 3s linear infinite;
-  -ms-animation: rotating 3s linear infinite;
-  -o-animation: rotating 3s linear infinite;
   animation: rotating 3s linear infinite;
 }
 
@@ -97,9 +82,48 @@ h1 {
   padding: 3rem 0;
 }
 
+.loop-wrapper {
+  padding: 3rem 0;
+}
+
 .logo {
   font-size: 10rem;
   font-weight: normal;
   color: #f2b306;
   text-shadow: 5px 5px 5px #000;
+}
+
+.select-style, #loop-toggle-button {
+  background-color: #fff;
+  border: 3px solid #ccc;
+  border-radius: 3px;
+  font-size: 1.3rem;
+}
+
+.select-style {
+  display: inline-block;
+  width: 200px;
+  background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") no-repeat 95% 50%;
+}
+
+.select-style select {
+  font-size: 1.3rem;
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.select-style select:focus {
+  outline: none;
+}
+
+#loop-toggle-button {
+  width: 120px;
+  padding: 5px 8px;
 }
