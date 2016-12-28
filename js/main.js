@@ -31,7 +31,9 @@ window.addEventListener('keydown', playBeat);
 
 var loopToggleButton = document.getElementById('loop-toggle-button'),
     loopSelect       = document.getElementById('loop-select'),
-    loopAudio        = document.getElementById('loop-audio');
+    loopAudio        = document.getElementById('loop-audio'),
+    disco1           = document.querySelector(".key[data-key='69'] > .disco"),
+    disco2           = document.querySelector(".key[data-key='85'] > .disco");
 
 function loopToggle(e) {
   var loopName = loopSelect.value;
@@ -42,10 +44,14 @@ function loopToggle(e) {
     loopAudio.src = "sounds/loop/" + loopName + ".wav";
     loopAudio.play();
     setButtonValue("pause");
+    disco1.classList.add('rotating-clockwise');
+    disco2.classList.add('rotating-anticlockwise');
   }
   else {
     loopAudio.pause();
     setButtonValue("start");
+    disco1.classList.remove('rotating-clockwise');
+    disco2.classList.remove('rotating-anticlockwise');
   }
 };
 
@@ -53,6 +59,8 @@ function resetAudio(e) {
   if (!loopAudio.paused) {
     loopAudio.pause();
     setButtonValue("start");
+    disco1.classList.remove('rotating-clockwise');
+    disco2.classList.remove('rotating-anticlockwise');
   }
 };
 
