@@ -1,3 +1,4 @@
+/* Font Face */
 @font-face {
   font-family: 'Thug';
   src: url('font/thug____-webfont.eot');
@@ -7,6 +8,30 @@
        url('font/thug____-webfont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+.thug {
+  font-family: "Thug";
+}
+
+/* General */
+html {
+  font-size: 10px;
+  background: url(../img/background/1.jpg) bottom center;
+  background-size: cover;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: white;
+  height: 100vh;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }
 
 /* Disc Animation */
@@ -50,4 +75,12 @@
   -ms-animation: rotating 3s linear infinite;
   -o-animation: rotating 3s linear infinite;
   animation: rotating 3s linear infinite;
+}
+
+/* Main Styles */
+.logo {
+  font-size: 10rem;
+  font-weight: normal;
+  color: #f2b306;
+  text-shadow: 5px 5px 5px #000;
 }
