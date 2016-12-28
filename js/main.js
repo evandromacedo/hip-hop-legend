@@ -63,3 +63,9 @@ function setButtonValue(status) {
 
 loopToggleButton.addEventListener('click', loopToggle);
 loopSelect.addEventListener('change', resetAudio);
+
+// Generate random background
+(function() {
+  var randomNumber = Math.floor(Math.random() * 5) + 1;
+  document.documentElement.style.backgroundImage = "url(img/background/" + randomNumber + ".jpg)";
+}());
