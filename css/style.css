@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Thug';
+  src: url('font/thug____-webfont.eot');
+  src: url('font/thug____-webfont.eot?#iefix') format('embedded-opentype'),
+       url('font/thug____-webfont.woff2') format('woff2'),
+       url('font/thug____-webfont.woff') format('woff'),
+       url('font/thug____-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
