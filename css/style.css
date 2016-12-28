@@ -74,7 +74,7 @@ body, html {
 }
 
 a {
-  color: inherit;
+  color: #ffc600;
   text-decoration: inherit;
 }
 
@@ -85,6 +85,8 @@ h1 {
 /* Helpers */
 .thug {
   font-family: "Thug";
+  color: #ffc600;
+  text-shadow: 5px 5px 5px #000;
 }
 
 .rotating-clockwise {
@@ -106,7 +108,7 @@ h1 {
   height: 100vh;
   width: 80%;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding-top: 3rem;
 }
 
 .loop-wrapper {
@@ -116,8 +118,6 @@ h1 {
 .logo {
   font-size: 10rem;
   font-weight: normal;
-  color: #ffc600;
-  text-shadow: 5px 5px 5px #000;
 }
 
 .select-style, #loop-toggle-button {
@@ -171,7 +171,6 @@ h1 {
   transition: all .05s;
   width: 100px;
   text-align: center;
-  color: white;
   background-color: rgba(90, 90, 90, 0.95);
   text-shadow: 0 0 5px black;
 }
@@ -231,4 +230,58 @@ h1 {
 
 .separator-two {
   width: 110px;
+}
+
+.made-by {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 0 5px 0 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* About Modal */
+.about {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 15px 10px 0;
+  font-size: 4rem;
+}
+
+.modal {
+  /*display: none;*/
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+  font-size: 2rem;
+}
+
+.modal-content {
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.close {
+  float: right;
+  font-size: 5rem;
+  margin-right: 2rem;
+}
+
+.close:hover,
+.close:focus {
+  color: #ffc600;
+  text-decoration: none;
+  cursor: pointer;
 }
