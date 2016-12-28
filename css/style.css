@@ -83,13 +83,13 @@ h1 {
 }
 
 .loop-wrapper {
-  padding: 3rem 0;
+  padding: 3rem 0 10rem 0;
 }
 
 .logo {
   font-size: 10rem;
   font-weight: normal;
-  color: #f2b306;
+  color: #ffc600;
   text-shadow: 5px 5px 5px #000;
 }
 
@@ -126,4 +126,43 @@ h1 {
 #loop-toggle-button {
   width: 120px;
   padding: 5px 8px;
+}
+
+.key-list {
+  display:flex;
+  flex:1;
+  align-items: center;
+  justify-content: center;
+}
+
+.key {
+  border: 4px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  transition: all .07s;
+  width: 100px;
+  text-align: center;
+  color: white;
+  background-color: rgba(90, 90, 90, 0.95);
+  text-shadow: 0 0 5px black;
+}
+
+.key-tap {
+  display: block;
+  font-size: 4rem;
+}
+
+.key-sound {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffc600;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 10px #ffc600;
 }
