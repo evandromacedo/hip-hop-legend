@@ -13,7 +13,10 @@ function playBeat(e) {
 
   if (!audio) return;
 
-  key.classList.add('playing');
+  if (!key.classList.contains('key-disco')) {
+    key.classList.add('playing');
+  }
+
   audio.currentTime = 0;
   audio.play();
 }

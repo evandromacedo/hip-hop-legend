@@ -11,7 +11,7 @@
 }
 
 /* Animations */
-@-webkit-keyframes rotating {
+@-webkit-keyframes rotating-clockwise {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -22,7 +22,7 @@
   }
 }
 
-@keyframes rotating {
+@keyframes rotating-clockwise {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -30,6 +30,28 @@
   to {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes rotating-anticlockwise {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotating-anticlockwise {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 
@@ -65,9 +87,14 @@ h1 {
   font-family: "Thug";
 }
 
-.rotating {
-  -webkit-animation: rotating 3s linear infinite;
-  animation: rotating 3s linear infinite;
+.rotating-clockwise {
+  -webkit-animation: rotating-clockwise 3s linear infinite;
+  animation: rotating-clockwise 3s linear infinite;
+}
+
+.rotating-anticlockwise {
+  -webkit-animation: rotating-anticlockwise 3s linear infinite;
+  animation: rotating-anticlockwise 3s linear infinite;
 }
 
 .center {
@@ -135,7 +162,7 @@ h1 {
   justify-content: center;
 }
 
-.key {
+.key-normal {
   border: 4px solid #ccc;
   border-radius: 5px;
   margin: 1rem;
@@ -147,6 +174,21 @@ h1 {
   color: white;
   background-color: rgba(90, 90, 90, 0.95);
   text-shadow: 0 0 5px black;
+}
+
+.key-disco {
+  position: relative;
+}
+
+.key-disco .key-tap {
+  position: absolute;
+}
+
+.disco {
+  width: 150px;
+  height: 150px;
+  background: url(../img/disco.svg) no-repeat center center;
+  background-size: auto 100%;
 }
 
 .key-tap {
@@ -165,4 +207,12 @@ h1 {
   transform: scale(1.1);
   border-color: #ffc600;
   box-shadow: 0 0 10px #ffc600;
+}
+
+.separator-one {
+  width: 50px;
+}
+
+.separator-two {
+  width: 110px;
 }
