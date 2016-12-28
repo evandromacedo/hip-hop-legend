@@ -1,25 +1,32 @@
-// function removeTransition(e) {
-//   if (e.propertyName !== 'transform') return;
-//   e.target.classList.remove('playing');
-// }
+/*
+  Thanks to Wes Bos for the algorithm <3
+*/
 
-function playSound(e) {
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+function removeTransition(e) {
+  if (e.propertyName !== 'transform') return;
+  e.target.classList.remove('playing');
+}
+
+function playBeat(e) {
+  var audio = document.querySelector("audio[data-key='" + e.keyCode + "']"),
+      key = document.querySelector(".key[data-key='" + e.keyCode + "']");
+
   if (!audio) return;
 
-  // key.classList.add('playing');
+  key.classList.add('playing');
   audio.currentTime = 0;
   audio.play();
 }
 
-// const keys = Array.from(document.querySelectorAll('.key'));
-// keys.forEach(key => key.addEventListener('transitionend', removeTransition));
-window.addEventListener('keydown', playSound);
+var keys = Array.from(document.querySelectorAll('.key'));
+keys.forEach(function(key) { key.addEventListener('transitionend', removeTransition) });
+window.addEventListener('keydown', playBeat);
 
-//////////////////////////////////////////////////////////
+/*
+  Awkward, bad and messy code of mine
+*/
 
-var loopToggleButton = document.getElementById('loop-toggle'),
+var loopToggleButton = document.getElementById('loop-toggle-button'),
     loopSelect       = document.getElementById('loop-select'),
     loopAudio        = document.getElementById('loop-audio');
 
@@ -31,26 +38,25 @@ function loopToggle(e) {
   if (loopToggleButton.getAttribute("data-status") == "start") {
     loopAudio.src = "sounds/loop/" + loopName + ".wav";
     loopAudio.play();
-
-    loopToggleButton.setAttribute("data-status", "pause");
-    loopToggleButton.textContent = "Pause Loop";
+    setButtonValue("pause");
   }
   else {
     loopAudio.pause();
-
-    loopToggleButton.setAttribute("data-status", "start");
-    loopToggleButton.textContent = "Start Loop";
+    setButtonValue("start");
   }
 };
 
 function resetAudio(e) {
   if (!loopAudio.paused) {
     loopAudio.pause();
-
-    loopToggleButton.setAttribute("data-status", "start");
-    loopToggleButton.textContent = "Start Loop";
+    setButtonValue("start");
   }
 };
+
+function setButtonValue(status) {
+  loopToggleButton.setAttribute("data-status", status);
+  loopToggleButton.textContent = status.charAt(0).toUpperCase() + status.slice(1) + " Loop";
+}
 
 loopToggleButton.addEventListener('click', loopToggle);
 loopSelect.addEventListener('change', resetAudio);
