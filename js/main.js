@@ -68,10 +68,8 @@
     loopToggleButton.textContent = status.charAt(0).toUpperCase() + status.slice(1) + " Loop";
   }
 
-
   loopToggleButton.addEventListener('click', loopToggle);
   loopSelect.addEventListener('change', resetAudio);
-
 
   // Modal Stuff
   var modal       = document.getElementById("modal"),

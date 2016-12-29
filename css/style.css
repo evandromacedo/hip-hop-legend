@@ -67,6 +67,7 @@ html {
 }
 
 body, html {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -105,10 +106,11 @@ h1 {
 
 /* Main Styles */
 .container {
-  height: 100vh;
+  min-height: 100%;
+  position: relative;
   width: 80%;
   margin: 0 auto;
-  padding-top: 3rem;
+  padding: 3rem 0 50px 0;
 }
 
 .loop-wrapper {
@@ -153,6 +155,7 @@ h1 {
 #loop-toggle-button {
   width: 120px;
   padding: 5px 8px;
+  cursor: pointer;
 }
 
 .key-list {
@@ -233,26 +236,33 @@ h1 {
 }
 
 .made-by {
+  position: relative;
+  height: 50px;
+  margin: -50px 0 0 0;
+  font-size: 1.8rem;
+  float: left;
+  width: 50%;
+}
+
+.made-by .made-by-bg {
   position: absolute;
   bottom: 0;
-  left: 0;
-  margin: 0;
-  font-size: 1.8rem;
-  display: inline-block;
   padding: 5px 10px;
   border-radius: 0 5px 0 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* About Modal */
 .about {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 0 15px 10px 0;
+  float: right;
+  width: 50%;
+  text-align: right;
+  height: 50px;
+  margin: -50px 15px 0 0;
   font-size: 4rem;
   cursor: pointer;
 }
+
+/* About Modal */
 
 .modal {
   display: none;
