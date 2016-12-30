@@ -23,6 +23,15 @@
 
   var keys = Array.from(document.querySelectorAll('.key'));
   keys.forEach(function(key) { key.addEventListener('transitionend', removeTransition) });
+
+  var keyList = Array.from(document.querySelectorAll('.key-list'));
+  keyList.forEach(function(key) {
+    key.addEventListener('click', function(e) {
+      e.keyCode = e.target.parentNode.getAttribute("data-key") || e.target.getAttribute("data-key");
+      playBeat(e);
+    });
+  });
+
   window.addEventListener('keydown', playBeat);
 
   /*

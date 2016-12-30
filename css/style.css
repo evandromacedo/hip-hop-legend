@@ -72,6 +72,12 @@ body, html {
   padding: 0;
   font-family: sans-serif;
   color: white;
+
+  -webkit-user-select        : none;
+  -moz-user-select           : none;
+  -khtml-user-select         : none;
+  -ms-user-select            : none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a {
